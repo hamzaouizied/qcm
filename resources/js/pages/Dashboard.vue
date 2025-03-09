@@ -3,6 +3,7 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
 import { ref, computed, onMounted } from 'vue';
+import Timer from "./Timer.vue";
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -90,9 +91,7 @@ onMounted(startTimer);
                         <h1 class="text-2xl font-bold mb-6">Exam - 1</h1>
                     </div>
                     <div class="basis-full">
-                        <p v-if="!testFinished" class="text-right text-gray-600 mb-4">
-                            Temps restant : {{ Math.floor(timeLeft / 60) }}m {{ timeLeft % 60 }}s
-                        </p>
+                        <Timer />
                     </div>
                 </div>
 
